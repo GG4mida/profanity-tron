@@ -1,0 +1,32 @@
+name: "Build"
+
+on:
+  push:
+    branches:
+      - feature/build
+
+jobs:
+  build_for_windows:
+    name: "Build for Windows"
+    runs-on: [windows-2022]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          vsversion: 2022
+
+      - name: "Build"
+        shell: cmd
+        run: | 
+          cl.exe profanity.cpp profanity.exe /std:c++latest
+
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: profanity.exe
+          token: ${{ secrets.GH_TOKEN }}
+          allowUpdates: true
+          draft: true
+          replacesArtifacts: false
