@@ -42,6 +42,7 @@ jobs:
           /Zc:forScope 
           /Zc:inline 
           /Fo"dist\\" 
+          /Fe"dist\\" 
           /external:W1 
           /Gd 
           /TP 
