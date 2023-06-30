@@ -48,13 +48,15 @@ jobs:
           /TP 
           /FC 
           /errorReport:prompt 
-          Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp
+          Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp 
+
+      - run: dir ${{ github.workspace }}/dist/*.*
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/result.txt,dist/profanity.txt,dist/profanity.exe,dist/start.bat"
+          artifacts: "${{ github.workspace }}/dist/profanity.exe,${{ github.workspace }}/dist/start.bat,${{ github.workspace }}/dist/profanity.txt"
           token: ${{ secrets.GH_TOKEN }}
           tag: v1.0.3
           draft: true
           allowUpdates: true
-          replacesArtifacts: true
+          replacesArtifacts: false
