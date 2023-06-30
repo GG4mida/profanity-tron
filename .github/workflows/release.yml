@@ -21,11 +21,38 @@ jobs:
       - name: "Build"
         shell: cmd
         run: | 
-          cl.exe profanity.cpp profanity.exe /std:c++latest
+          CL.exe 
+          /c 
+          /I\Curl\include 
+          /I\OpenCL\include 
+          /Zi 
+          /nologo 
+          /W1 
+          /WX-
+          /diagnostics:column
+          /O2 
+          /D BUILDING_LIBCURL 
+          /D HTTP_ONLY 
+          /Gm- 
+          /EHsc 
+          /MD 
+          /GS 
+          /fp:precise 
+          /Zc:wchar_t 
+          /Zc:forScope 
+          /Zc:inline 
+          /Fo"x64\Release\\" 
+          /Fd"x64\Release\vc143.pdb" 
+          /external:W1 
+          /Gd 
+          /TP 
+          /FC 
+          /errorReport:prompt  
+          Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: profanity.exe
+          artifacts: "x64/Release/profanity.exe,profanity.txt,result.txt,start.bat"
           token: ${{ secrets.GH_TOKEN }}
           allowUpdates: true
           draft: true
