@@ -23,8 +23,8 @@ jobs:
         run: >-
           CL.exe 
           /c 
-          /I\Curl\include 
-          /I\OpenCL\include 
+          /I"Curl\include" 
+          /I"OpenCL\include" 
           /Zi 
           /nologo 
           /W1 
