@@ -20,7 +20,7 @@ jobs:
 
       - name: "Build"
         shell: cmd
-        run: | 
+        run: >-
           CL.exe 
           /c 
           /I\Curl\include 
@@ -28,8 +28,8 @@ jobs:
           /Zi 
           /nologo 
           /W1 
-          /WX-
-          /diagnostics:column
+          /WX- 
+          /diagnostics:column 
           /O2 
           /D BUILDING_LIBCURL 
           /D HTTP_ONLY 
@@ -47,7 +47,7 @@ jobs:
           /Gd 
           /TP 
           /FC 
-          /errorReport:prompt  
+          /errorReport:prompt 
           Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp
 
       - uses: ncipollo/release-action@v1
