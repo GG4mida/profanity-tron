@@ -48,10 +48,9 @@ jobs:
           /TP 
           /FC 
           /errorReport:prompt 
-          Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp 
+          Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp \n\
+          link /out:dist\profanity.exe dist\*.obj
         
-        run: link /out:dist\profanity.exe dist\*.obj
-
       - name: "Show Build"
         run: dir ${{ github.workspace }}/dist/*.*
 
