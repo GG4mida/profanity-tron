@@ -41,7 +41,7 @@ jobs:
           /Zc:wchar_t 
           /Zc:forScope 
           /Zc:inline 
-          /Fo"x64\Release\\" 
+          /Fo"dist\" 
           /external:W1 
           /Gd 
           /TP 
@@ -51,7 +51,7 @@ jobs:
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "x64/Release/profanity.exe,profanity.txt,result.txt,start.bat"
+          artifacts: "dist/profanity.exe,profanity.txt"
           token: ${{ secrets.GH_TOKEN }}
           allowUpdates: true
           draft: true
