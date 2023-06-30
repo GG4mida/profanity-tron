@@ -18,17 +18,17 @@ jobs:
         with:
           vsversion: 2022
 
-      - name: "Install CUDA"
-        shell: powershell
-        run: |
-          choco install cuda --version=12.0.1.52833 -y
-          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\bin" >> $env:GITHUB_PATH
+      # - name: "Install CUDA"
+      #   shell: powershell
+      #   run: |
+      #     choco install cuda --version=12.0.1.52833 -y
+      #     "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\bin" >> $env:GITHUB_PATH
 
       - name: "Build"
         shell: cmd
         run: |
-          CL.exe /c /I"Curl\include" /I"OpenCL\include" /Zi /nologo /W1 /WX- /diagnostics:column /O2 /D BUILDING_LIBCURL /D HTTP_ONLY /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"dist\\" /Fe"dist\\" /external:W1 /Gd /TP /FC /errorReport:prompt Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp
-          link /out:dist\profanity.exe dist\*.obj
+          CL.exe /c /I"${{ github.workspace }}\Curl\include" /I"${{ github.workspace }}\OpenCL\include" /Zi /nologo /W1 /WX- /diagnostics:column /O2 /D BUILDING_LIBCURL /D HTTP_ONLY /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"${{ github.workspace }}\dist\\" /Fe"${{ github.workspace }}\dist\\" /external:W1 /Gd /TP /FC /errorReport:prompt Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp
+          link /out:${{ github.workspace }}\dist\profanity.exe ${{ github.workspace }}\dist\*.obj
         
       - name: "Show Build"
         run: dir ${{ github.workspace }}/dist/*.*
