@@ -51,9 +51,9 @@ jobs:
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/*"
+          artifacts: "dist/result.txt,dist/profanity.txt,dist/profanity.exe,dist/start.bat"
           token: ${{ secrets.GH_TOKEN }}
           tag: v1.0.3
-          allowUpdates: true
           draft: true
-          replacesArtifacts: false
+          allowUpdates: true
+          replacesArtifacts: true
