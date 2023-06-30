@@ -42,7 +42,6 @@ jobs:
           /Zc:forScope 
           /Zc:inline 
           /Fo"x64\Release\\" 
-          /Fd"x64\Release\vc143.pdb" 
           /external:W1 
           /Gd 
           /TP 
