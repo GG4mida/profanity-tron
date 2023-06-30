@@ -1,10 +1,10 @@
 # Tron Profanity
 
-![https://github.com/GG4mida/profanity-tron/actions](https://img.shields.io/github/actions/workflow/status/GG4mida/profanity-tron/release.yml)
-![https://github.com/GG4mida/profanity-tron](https://img.shields.io/badge/baseon-gpu-yellowgreen.svg)
-![https://github.com/GG4mida/profanity-tron](https://img.shields.io/badge/language-c,c++-orange.svg)
-![https://github.com/GG4mida/profanity-tron](https://img.shields.io/badge/platform-windows,linux-yellow.svg)
-![https://t.me/jackslowfak](https://img.shields.io/badge/telegram-@jackslowfak-blue.svg)
+![](https://img.shields.io/github/actions/workflow/status/GG4mida/profanity-tron/release.yml)
+![](https://img.shields.io/badge/baseon-gpu-yellowgreen.svg)
+![](https://img.shields.io/badge/language-c,c++-orange.svg)
+![](https://img.shields.io/badge/platform-windows,linux-yellow.svg)
+![](https://img.shields.io/badge/telegram-@jackslowfak-blue.svg)
 
 波场（TRON）靓号生成器，利用 `gpu` 进行加速。代码开源，安全可靠 🔥
 
