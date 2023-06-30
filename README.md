@@ -27,7 +27,7 @@
 
 ### Windows
 
-下载 `dist/windows.zip`，解压，然后直接运行 `start.bat` 即可。
+前往 [Release](https://github.com/GG4mida/profanity-tron/releases) 页面下载发布包，本地解压后直接运行 `start.bat` 即可。
 
 > 请参考下文 `命令 & 参数` 章节说明，自行编辑 `start.bat` 配置运行参数。
 
