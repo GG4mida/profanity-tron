@@ -20,35 +20,8 @@ jobs:
 
       - name: "Build"
         shell: cmd
-        run: >
-          CL.exe 
-          /c 
-          /I"Curl\include" 
-          /I"OpenCL\include" 
-          /Zi 
-          /nologo 
-          /W1 
-          /WX- 
-          /diagnostics:column 
-          /O2 
-          /D BUILDING_LIBCURL 
-          /D HTTP_ONLY 
-          /Gm- 
-          /EHsc 
-          /MD 
-          /GS 
-          /fp:precise 
-          /Zc:wchar_t 
-          /Zc:forScope 
-          /Zc:inline 
-          /Fo"dist\\" 
-          /Fe"dist\\" 
-          /external:W1 
-          /Gd 
-          /TP 
-          /FC 
-          /errorReport:prompt 
-          Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp \n\
+        run: |
+          CL.exe /c /I"Curl\include" /I"OpenCL\include" /Zi /nologo /W1 /WX- /diagnostics:column /O2 /D BUILDING_LIBCURL /D HTTP_ONLY /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"dist\\" /Fe"dist\\" /external:W1 /Gd /TP /FC /errorReport:prompt Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp
           link /out:dist\profanity.exe dist\*.obj
         
       - name: "Show Build"
