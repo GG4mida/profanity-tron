@@ -49,8 +49,11 @@ jobs:
           /FC 
           /errorReport:prompt 
           Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp 
+        
+        run: link /out:dist\profanity.exe dist\*.obj
 
-      - run: dir ${{ github.workspace }}/dist/*.*
+      - name: "Show Build"
+        run: dir ${{ github.workspace }}/dist/*.*
 
       - uses: ncipollo/release-action@v1
         with:
