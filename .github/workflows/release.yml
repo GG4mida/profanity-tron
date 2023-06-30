@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - feature/build
+    tags:
+    - '*'
 
 jobs:
   build_for_windows:
@@ -51,7 +53,7 @@ jobs:
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/**.*,profanity.txt"
+          artifacts: "dist/*"
           token: ${{ secrets.GH_TOKEN }}
           allowUpdates: true
           draft: true
