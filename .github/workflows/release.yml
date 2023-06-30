@@ -18,6 +18,12 @@ jobs:
         with:
           vsversion: 2022
 
+      - name: "Install CUDA"
+        shell: powershell
+        run: |
+          choco install cuda --version=12.0.1.52833 -y
+          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\bin" >> $env:GITHUB_PATH
+
       - name: "Build"
         shell: cmd
         run: |
