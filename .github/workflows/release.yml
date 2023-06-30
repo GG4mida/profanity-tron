@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - feature/build
-    tags:
-    - '*'
 
 jobs:
   build_for_windows:
@@ -55,6 +53,7 @@ jobs:
         with:
           artifacts: "dist/*"
           token: ${{ secrets.GH_TOKEN }}
+          tag: v1.0.3
           allowUpdates: true
           draft: true
           replacesArtifacts: false
