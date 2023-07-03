@@ -3,7 +3,7 @@ name: "Build And Release"
 on:
   push:
     branches:
-      - main
+      - feature/build
 
 jobs:
   build_for_windows:
@@ -35,7 +35,7 @@ jobs:
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "${{ github.workspace }}/dist/profanity.exe,${{ github.workspace }}/dist/start.bat,${{ github.workspace }}/dist/profanity.txt"
+          artifacts: "${{ github.workspace }}/dist/profanity.exe,${{ github.workspace }}/dist/README.md,${{ github.workspace }}/dist/start.bat,${{ github.workspace }}/profanity.txt"
           token: ${{ secrets.GH_TOKEN }}
           tag: v1.1.0
           draft: true
